@@ -15,6 +15,11 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 # -------------------- Streamlit --------------------
 import streamlit as st
 
+# -------------------- ENV FILES --------------------
+from dotenv import load_dotenv
+
+load_dotenv()  # Loads variables from .env
+
 
 # -------------------- Load HuggingFace Embeddings --------------------
 from utils.helper import load_embeddings 
@@ -72,7 +77,7 @@ def get_conversational_chain(retriever):
 
     # Gemini Model
     model = ChatGoogleGenerativeAI(
-        model="gemini-pro",
+        model="gemini-1.5-flash",
         temperature=0.3
     )
 
